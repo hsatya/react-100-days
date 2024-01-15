@@ -1,0 +1,8 @@
+.clock-container {
+  display: flex;
+  justify-content: center;
+}
+
+.clk {
+  margin: 5px;
+}
