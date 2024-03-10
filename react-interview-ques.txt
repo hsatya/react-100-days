@@ -1,0 +1,88 @@
+DO NOT go to Interview without preparing for them !!
+
+0. What is Lifting State Up in React?
+1. What is React context?
+2. What are different ways to add CSS in your app?
+3. What is Hot Module Replacement?
+4. What is the use of Parcel, Vite, Webpack?
+5. How does create-react-app work?
+
+6. What is Tree Shaking?
+7. Difference b/w dependency and devDependency
+8. What is npx and npm?
+9. Difference b/w package .json and package-lock .json
+10. Difference between console .log(<HeaderComponent/>) and console .log(HeaderComponent());
+
+11. What is React.Fragment?
+12. What is the purpose of dependency array in useEffect? What is the difference when it is used and when it is not used?
+13. What if 2 components are given will the state change in one component will effect the other component’s state (child)?
+14. What is the use of return in useEffect ?
+15. Difference b/w client-side routing and server-side routing?
+
+16. Explain the concept of code splitting and its benefits in React.
+17. How does React handle routing and navigation?
+18. What are higher-order components (HOC) in React?
+19. What are controlled and uncontrolled components?
+20. Explain the concept of reconciliation in React.
+
+0. Question: How does React's Virtual DOM work, and what are its advantages over the real DOM?
+
+👉 Answer: React's Virtual DOM is a lightweight copy of the actual DOM. When state changes, React creates a new Virtual DOM representation and compares it with the previous one. Only the differences are updated in the real DOM, reducing the need for expensive DOM manipulations.
+
+--
+
+1. Question: Explain the role of keys in React lists and why they are essential.
+
+👉 Answer: Keys help React identify each list item uniquely and efficiently update and re-render components when the list changes. They improve performance by minimizing re-renders and avoiding issues like incorrect component recycling.
+
+Code Example:
+
+// Without keys
+const itemsWithoutKeys = items. map((item) => <li>{item}</li>);
+
+// With unique ids as keys
+const itemsWithKeys = items. map((item) => <li key={items.id}>{item}</li>);
+
+--
+
+2. Question: Explain the concept of higher-order components (HOCs) in React.
+
+👉 Answer: Higher-order components are functions that take a component as an input and return an enhanced component with additional props or functionality. They are commonly used for code reuse, logic abstraction, and cross-cutting concerns.
+
+Code example:
+
+const withLogger = (WrappedComponent) => {
+ const EnhancedComponent = (props) => {
+  console.log('Component props:', props);
+  return <WrappedComponent {...props} />;
+ };
+
+ return EnhancedComponent;
+};
+
+// Usage
+const MyComponent = (props) => {
+ // Component logic here
+};
+
+export default withLogger(MyComponent);
+
+--
+
+3. Question: What is the significance of React Fragments, and when should you use them?
+
+👉 Answer: React Fragments allow you to group multiple components without introducing an additional parent element in the DOM. They are useful when you need to return multiple elements from a component's render method.
+
+Code example:
+
+import React, { Fragment } from 'react';
+
+const MyComponent = () => {
+ return (
+  <Fragment>
+   <h1>Title</h1>
+   <p>Paragraph 1</p>
+   <p>Paragraph 2</p>
+  </Fragment>
+ );
+};
